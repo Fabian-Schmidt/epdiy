@@ -1,3 +1,5 @@
+#if defined(USE_ESP32_VARIANT_ESP32S3) 
+
 /**
  * Implements a 8bit parallel interface to transmit pixel
  * data to the display, based on the I2S peripheral.
@@ -66,3 +68,5 @@ bool IRAM_ATTR i2s_is_busy();
  * @brief Give up allocated resources.
  */
 void i2s_deinit();
+
+#endif // USE_ESP32_VARIANT_ESP32S3

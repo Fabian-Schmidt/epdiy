@@ -1,3 +1,5 @@
+#if defined(CONFIG_EPD_BOARD_REVISION_LILYGO_S3_47)
+
 #include "epd_board.h"
 
 #include "../display_ops.h"
@@ -207,3 +209,5 @@ const EpdBoardDefinition epd_board_lilygo_s3_47_touch = {
   .temperature_init = NULL,
   .ambient_temperature = NULL,
 };
+
+#endif // CONFIG_EPD_BOARD_REVISION_LILYGO_S3_47

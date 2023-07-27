@@ -1,3 +1,5 @@
+#if defined(USE_ESP32_VARIANT_ESP32S3) 
+
 #include "i2s_data_bus_s3.h"
 
 #include <driver/periph_ctrl.h>
@@ -106,3 +108,5 @@ void i2s_deinit()
     esp_intr_free(gI2S_intr_handle);
     periph_module_disable(PERIPH_I2S1_MODULE);
 }
+
+#endif // USE_ESP32_VARIANT_ESP32S3

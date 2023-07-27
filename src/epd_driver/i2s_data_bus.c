@@ -1,3 +1,5 @@
+#if defined(USE_ESP32_VARIANT_ESP32)
+
 #include "i2s_data_bus.h"
 #include "driver/rtc_io.h"
 #include "esp_system.h"
@@ -299,3 +301,5 @@ void i2s_deinit() {
 
   periph_module_disable(PERIPH_I2S1_MODULE);
 }
+
+#endif // USE_ESP32_VARIANT_ESP32

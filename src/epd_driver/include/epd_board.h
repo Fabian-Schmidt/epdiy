@@ -30,11 +30,18 @@ typedef struct {
 extern const EpdBoardDefinition *epd_board;
 
 // Built in board definitions
+#if defined(CONFIG_EPD_BOARD_REVISION_LILYGO_T5_47)
 extern const EpdBoardDefinition epd_board_lilygo_t5_47;
 extern const EpdBoardDefinition epd_board_lilygo_t5_47_touch;
+#elif defined(CONFIG_EPD_BOARD_REVISION_LILYGO_S3_47)
 extern const EpdBoardDefinition epd_board_lilygo_s3_47;
 extern const EpdBoardDefinition epd_board_lilygo_s3_47_touch;
+#elif defined(CONFIG_EPD_BOARD_REVISION_V2_V3)
 extern const EpdBoardDefinition epd_board_v2_v3;
+#elif defined(CONFIG_EPD_BOARD_REVISION_V4)
 extern const EpdBoardDefinition epd_board_v4;
+#elif defined(CONFIG_EPD_BOARD_REVISION_V5)
 extern const EpdBoardDefinition epd_board_v5;
+#elif defined(CONFIG_EPD_BOARD_REVISION_V6)
 extern const EpdBoardDefinition epd_board_v6;
+#endif
