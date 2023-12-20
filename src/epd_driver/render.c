@@ -351,12 +351,26 @@ EpdRect epd_difference_image_base(
     for (max_y = y_end - 1; max_y >= crop_to.y; max_y--) {
       if (dirty_lines[max_y] != 0) break;
     }
+    #ifdef CONFIG_EPD_BOARD_REVISION_LILYGO_S3_47
     EpdRect crop_rect = {
       .x = min_x,
       .y = min_y,
       .width = max(max_x - min_x + 1, 0),
       .height = max(max_y - min_y + 1, 0),
     };
+    if (crop_rect.width > 0) {
+      // Update full row.
+      crop_rect.x = 0;
+      crop_rect.width = x_end;
+    }
+    #else
+    EpdRect crop_rect = {
+      .x = min_x,
+      .y = min_y,
+      .width = max(max_x - min_x + 1, 0),
+      .height = max(max_y - min_y + 1, 0),
+    };
+    #endif
     return crop_rect;
 }
 
